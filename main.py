@@ -20,7 +20,7 @@ chrome_options.page_load_strategy = 'normal'
 
 driver = webdriver.Chrome(options=chrome_options)
 wait = WebDriverWait(driver, 10)
-driver.get("https://adp.amanat.systems/login")
+driver.get(os.getenv('ADP'))
 
 login_form = wait.until(EC.presence_of_element_located(('id', 'form_item_login')))
 login_form.send_keys('TEST')
